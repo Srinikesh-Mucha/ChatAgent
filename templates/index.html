@@ -549,7 +549,7 @@
     let threadId = localStorage.getItem("thread_id");
 
     if (!threadId) {
-        threadId = crypto.randomUUID();
+        threadId = Date.now().toString() + "-" + Math.random().toString(36).substring(2);
         localStorage.setItem("thread_id", threadId);
     }
 
@@ -1145,7 +1145,7 @@
     }
 
     async function newChat() {
-        threadId = crypto.randomUUID();
+        threadId = Date.now().toString() + "-" + Math.random().toString(36).substring(2);
         localStorage.setItem("thread_id", threadId);
 
         if (isDictating) {
