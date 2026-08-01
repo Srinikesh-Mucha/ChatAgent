@@ -51,36 +51,6 @@ The application is containerized using **Docker** and deployed on **AWS EC2** th
 
 ---
 
-# ✨ Features
-
-✅ Agentic AI powered by LangGraph
-
-✅ Real-time streaming responses
-
-✅ Web Search using Tavily
-
-✅ Calculator Tool
-
-✅ Upload Documents for RAG
-
-✅ ChromaDB Vector Database
-
-✅ Persistent Chat History
-
-✅ Conversation Memory
-
-✅ Voice Input
-
-✅ Multiple Gemini Models
-
-✅ Dockerized Deployment
-
-✅ AWS CI/CD with GitHub Actions
-
-✅ LangSmith Monitoring
-
----
-
 # 📸 Application Preview
 
 ## Home Interface
@@ -109,6 +79,93 @@ The chatbot can:
 - 🧠 Remember previous conversations
 
 using a single conversational interface.
+
+---
+
+# 📊 LangSmith Observability
+
+The project integrates **LangSmith** to trace, debug, and monitor every execution of the LangGraph workflow.
+
+This provides complete visibility into:
+
+- LLM calls
+- Tool execution
+- Response latency
+- Token usage
+- Workflow tracing
+- Errors and debugging
+
+---
+
+## Workflow Traces
+
+<p align="center">
+<img src="assets/LangSmith-SS1.png" width="900">
+</p>
+
+Each user interaction generates a complete execution trace, making it easy to understand how the agent reasoned and which tools were invoked before generating the final response.
+
+---
+
+## LLM Monitoring
+
+<p align="center">
+<img src="assets/LangSmith-SS2.png" width="900">
+</p>
+
+Monitor:
+
+- Token consumption
+- Request latency
+- Success & failure rates
+- Model performance
+- Cost analysis
+
+---
+
+## Tool Analytics
+
+<p align="center">
+<img src="assets/LangSmith-SS3.png" width="900">
+</p>
+
+Track the usage and performance of each integrated tool, including:
+
+- 🌐 Tavily Web Search
+- 🧮 Calculator
+- 📄 Document Retrieval (RAG)
+
+These insights simplify debugging and help optimize application performance.
+
+---
+
+# ✨ Features
+
+✅ Agentic AI powered by LangGraph
+
+✅ Real-time streaming responses
+
+✅ Web Search using Tavily
+
+✅ Calculator Tool
+
+✅ Upload Documents for RAG
+
+✅ ChromaDB Vector Database
+
+✅ Persistent Chat History
+
+✅ Conversation Memory
+
+✅ Voice Input
+
+✅ Multiple Gemini Models
+
+✅ Dockerized Deployment
+
+✅ AWS CI/CD with GitHub Actions
+
+✅ LangSmith Monitoring
 
 ---
 
@@ -194,63 +251,6 @@ ChatAgent is built using **LangGraph**, enabling the LLM to reason about a user'
 ```
 
 The agent automatically selects the appropriate tool based on the user's intent, enabling context-aware and accurate responses without requiring manual tool selection.
-
----
-
-# 📊 LangSmith Observability
-
-The project integrates **LangSmith** to trace, debug, and monitor every execution of the LangGraph workflow.
-
-This provides complete visibility into:
-
-- LLM calls
-- Tool execution
-- Response latency
-- Token usage
-- Workflow tracing
-- Errors and debugging
-
----
-
-## Workflow Traces
-
-<p align="center">
-<img src="assets/LangSmith-SS1.png" width="900">
-</p>
-
-Each user interaction generates a complete execution trace, making it easy to understand how the agent reasoned and which tools were invoked before generating the final response.
-
----
-
-## LLM Monitoring
-
-<p align="center">
-<img src="assets/LangSmith-SS2.png" width="900">
-</p>
-
-Monitor:
-
-- Token consumption
-- Request latency
-- Success & failure rates
-- Model performance
-- Cost analysis
-
----
-
-## Tool Analytics
-
-<p align="center">
-<img src="assets/LangSmith-SS3.png" width="900">
-</p>
-
-Track the usage and performance of each integrated tool, including:
-
-- 🌐 Tavily Web Search
-- 🧮 Calculator
-- 📄 Document Retrieval (RAG)
-
-These insights simplify debugging and help optimize application performance.
 
 ---
 
