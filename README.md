@@ -1,71 +1,330 @@
-# ChatAgent
+# 🤖 ChatAgent – Agentic AI Chatbot with LangGraph & RAG
 
-ChatAgent is an open-source **Agentic AI Chatbot** built with **Python, FastAPI, LangGraph, LangChain, Google Gemini, Tavily, ChromaDB, SQLAlchemy and SQLite**.
+<p align="center">
 
-It supports real-time streaming chat, document uploads, retrieval-augmented generation (RAG), web search, conversation memory, and a simple web UI.
+![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi)
+![LangGraph](https://img.shields.io/badge/LangGraph-Agentic_AI-black?style=for-the-badge)
+![LangChain](https://img.shields.io/badge/LangChain-Framework-green?style=for-the-badge)
+![Gemini](https://img.shields.io/badge/Google-Gemini-blue?style=for-the-badge&logo=google)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker)
+![AWS](https://img.shields.io/badge/AWS-EC2_|_ECR-FF9900?style=for-the-badge&logo=amazonaws)
+![GitHub Actions](https://img.shields.io/badge/GitHub-Actions-2088FF?style=for-the-badge&logo=githubactions)
 
----
-
-## Features
-
-* Chat with an AI agent powered by Google Gemini
-* Stream responses in real time
-* Upload documents such as PDF, DOCX, TXT, MD, PY, and CSV
-* Use uploaded files as context through RAG
-* Search the web with Tavily for current information
-* Store and recall conversation history
-* Simple FastAPI-based web interface
-* Docker-ready deployment
-* AWS CI/CD support using GitHub Actions, ECR, and EC2
+</p>
 
 ---
 
-## Project Overview
+## 🚀 Live Demo
 
-This project combines:
+🌐 **Try ChatAgent**
 
-* **FastAPI** for the backend server and API endpoints
-* **Jinja2** for rendering the frontend UI
-* **LangGraph** for agent orchestration
-* **LangChain** for tools, messages, and RAG workflow
-* **Google Gemini** as the LLM provider
-* **Tavily** for web search
-* **ChromaDB** for vector search over uploaded documents
-* **SQLAlchemy** for storing conversations
-* **SQLite** for conversation and persistence
-* **Docker** for containerized deployment
+**http://ec2-100-31-54-129.compute-1.amazonaws.com:8080/**
 
 ---
 
-## How to Run and Deploy
+## 🎥 Project Demo
 
-### 1. Clone the repository
+<p align="center">
+
+<a href="https://github.com/user-attachments/assets/719a2695-153e-43a4-834b-5f23d8473ca0">
+
+<img src="assets/Thumbnail.png" width="650">
+
+</a>
+
+<br>
+
+<b>▶ Click the thumbnail above to watch the complete demo.</b>
+
+</p>
+
+---
+
+# 📖 Overview
+
+ChatAgent is an **Agentic AI chatbot** inspired by ChatGPT that intelligently decides **when to answer directly** and **when to invoke specialized tools** such as **Web Search**, **Calculator**, and **Retrieval-Augmented Generation (RAG)**.
+
+Built with **LangGraph**, **LangChain**, **Google Gemini**, **FastAPI**, and **ChromaDB**, the application supports real-time streaming, conversation memory, document understanding, persistent chat history, voice input, and multi-model selection.
+
+The application is containerized using **Docker** and deployed on **AWS EC2** through a fully automated **GitHub Actions CI/CD pipeline** using **Amazon ECR**.
+
+---
+
+# ✨ Features
+
+✅ Agentic AI powered by LangGraph
+
+✅ Real-time streaming responses
+
+✅ Web Search using Tavily
+
+✅ Calculator Tool
+
+✅ Upload Documents for RAG
+
+✅ ChromaDB Vector Database
+
+✅ Persistent Chat History
+
+✅ Conversation Memory
+
+✅ Voice Input
+
+✅ Multiple Gemini Models
+
+✅ Dockerized Deployment
+
+✅ AWS CI/CD with GitHub Actions
+
+✅ LangSmith Monitoring
+
+---
+
+# 📸 Application Preview
+
+## Home Interface
+
+<p align="center">
+
+<img src="assets/ChatAgent-Demo.png" width="900">
+
+</p>
+
+A clean ChatGPT-inspired interface with:
+
+- Multi-chat support
+- Sidebar conversations
+- Voice input
+- Model selection
+- Streaming responses
+
+---
+
+The chatbot can:
+
+- 🌐 Search the web
+- 🧮 Solve calculations
+- 📄 Answer from uploaded documents
+- 🧠 Remember previous conversations
+
+using a single conversational interface.
+
+---
+
+# 🛠 Core Capabilities
+
+| Capability | Description |
+|------------|-------------|
+| 🌍 Web Search | Retrieves latest information using Tavily |
+| 📄 RAG | Answers questions from uploaded documents |
+| 🧮 Calculator | Executes mathematical expressions |
+| 🧠 Memory | Maintains conversational context |
+| 💬 Chat History | Stores previous conversations |
+| 🎙 Voice Input | Speak instead of typing |
+| ⚡ Streaming | Token-by-token responses |
+| 🤖 Multi-Model | Switch between Gemini models |
+| 🐳 Docker | Containerized deployment |
+| ☁ AWS | Production deployment on EC2 |
+
+---
+
+# 🏗️ High-Level Architecture
+
+```text
+                User
+                  │
+                  ▼
+          FastAPI Web Interface
+                  │
+                  ▼
+            LangGraph Agent
+                  │
+     ┌────────────┼─────────────┐
+     │            │             │
+     ▼            ▼             ▼
+ Web Search   Calculator     Document RAG
+   Tavily                     ChromaDB
+     │            │             │
+     └────────────┼─────────────┘
+                  │
+                  ▼
+          Google Gemini LLM
+                  │
+                  ▼
+          Streaming Response
+```
+
+---
+
+# ⭐ Why ChatAgent?
+
+Unlike a traditional chatbot that only sends prompts to an LLM, ChatAgent uses an **Agentic AI architecture** capable of selecting tools, retrieving external knowledge, maintaining context, and producing more accurate responses.
+
+This demonstrates practical experience with **LLM orchestration**, **tool calling**, **RAG**, **vector databases**, **cloud deployment**, and **production-ready AI systems**.
+
+---
+
+# ⚙️ Agent Workflow
+
+ChatAgent is built using **LangGraph**, enabling the LLM to reason about a user's request and dynamically decide whether to answer directly or invoke specialized tools.
+
+```text
+                    User Prompt
+                         │
+                         ▼
+                  LangGraph Router
+                         │
+        ┌────────────────┼────────────────┐
+        │                │                │
+        ▼                ▼                ▼
+   Web Search      Calculator        Document RAG
+    (Tavily)                           (ChromaDB)
+        │                │                │
+        └────────────────┼────────────────┘
+                         │
+                         ▼
+                  Google Gemini LLM
+                         │
+                         ▼
+                 Streaming Response
+                         │
+                         ▼
+                  Conversation Memory
+```
+
+The agent automatically selects the appropriate tool based on the user's intent, enabling context-aware and accurate responses without requiring manual tool selection.
+
+---
+
+# 📊 LangSmith Observability
+
+The project integrates **LangSmith** to trace, debug, and monitor every execution of the LangGraph workflow.
+
+This provides complete visibility into:
+
+- LLM calls
+- Tool execution
+- Response latency
+- Token usage
+- Workflow tracing
+- Errors and debugging
+
+---
+
+## Workflow Traces
+
+<p align="center">
+<img src="assets/LangSmith-SS1.png" width="900">
+</p>
+
+Each user interaction generates a complete execution trace, making it easy to understand how the agent reasoned and which tools were invoked before generating the final response.
+
+---
+
+## LLM Monitoring
+
+<p align="center">
+<img src="assets/LangSmith-SS2.png" width="900">
+</p>
+
+Monitor:
+
+- Token consumption
+- Request latency
+- Success & failure rates
+- Model performance
+- Cost analysis
+
+---
+
+## Tool Analytics
+
+<p align="center">
+<img src="assets/LangSmith-SS3.png" width="900">
+</p>
+
+Track the usage and performance of each integrated tool, including:
+
+- 🌐 Tavily Web Search
+- 🧮 Calculator
+- 📄 Document Retrieval (RAG)
+
+These insights simplify debugging and help optimize application performance.
+
+---
+
+# 🛠️ Tech Stack
+
+| Category | Technology |
+|-----------|------------|
+| Language | Python 3.11 |
+| Backend | FastAPI |
+| Frontend | HTML, CSS, JavaScript, Jinja2 |
+| Agent Framework | LangGraph |
+| LLM Framework | LangChain |
+| LLM | Google Gemini |
+| Search Tool | Tavily API |
+| Vector Database | ChromaDB |
+| Embeddings | Google Generative AI Embeddings |
+| Database | SQLite |
+| ORM | SQLAlchemy |
+| Containerization | Docker |
+| CI/CD | GitHub Actions |
+| Cloud | AWS EC2 |
+| Container Registry | Amazon ECR |
+| Monitoring | LangSmith |
+
+---
+
+# 📂 Project Structure
+
+```text
+ChatAgent
+│
+├── .github/
+│   └── workflows/
+│       └── cicd.yaml
+│
+├── assets/
+├── chroma_db/
+├── data/
+├── templates/
+│
+├── app.py
+├── agent.py
+├── tools.py
+├── rag.py
+├── database.py
+│
+├── Dockerfile
+├── requirements.txt
+└── README.md
+```
+
+---
+
+# 🚀 Getting Started
+
+## Clone the Repository
 
 ```bash
 git clone https://github.com/Srinikesh-Mucha/ChatAgent.git
-```
-
-### 2. Navigate to the project directory
-
-```bash
 cd ChatAgent
 ```
 
-### 3. Create a virtual environment
+---
 
-Using conda:
+## Create Virtual Environment
 
 ```bash
 conda create -n chatagent python=3.11 -y
-```
-
-### 4. Activate the virtual environment
-
-```bash
 conda activate chatagent
 ```
 
-### 5. Install dependencies
+---
+
+## Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -73,79 +332,49 @@ pip install -r requirements.txt
 
 ---
 
-## Environment Variables
+## Configure Environment Variables
 
-Create a `.env` file in the project root directory.
+Create a `.env` file in the project root.
 
 ```env
 GOOGLE_API_KEY=your_google_api_key
-GOOGLE_MODEL=gemini-flash-latest
+GOOGLE_MODEL=gemini-2.5-flash
 
 TAVILY_API_KEY=your_tavily_api_key
 
 LANGSMITH_TRACING=false
 LANGSMITH_ENDPOINT=https://api.smith.langchain.com
 LANGSMITH_API_KEY=your_langsmith_api_key
-LANGSMITH_PROJECT=bappygpt
-```
-
-If you do not want to use LangSmith tracing, keep:
-
-```env
-LANGSMITH_TRACING=false
+LANGSMITH_PROJECT=chatagent
 ```
 
 ---
 
-## Run Locally
-
-Start the FastAPI app:
+## Run the Application
 
 ```bash
 python app.py
 ```
 
-The app will be available at:
+Open:
 
-```text
+```
 http://127.0.0.1:8080
 ```
 
----
-
-## Project Structure
-
-```text
-ChatAgent/
-│
-├── app.py                  # FastAPI app and streaming chat endpoints
-├── agent.py                # LangGraph agent setup and tool orchestration
-├── database.py             # Conversation and persistence logic
-├── rag.py                  # Document ingestion and RAG logic
-├── tools.py                # Agent tools such as web search, memory, and RAG
-├── requirements.txt        # Python dependencies
-├── Dockerfile              # Docker image configuration
-├── .dockerignore           # Docker ignore rules
-│
-├── templates/
-│   └── index.html          # Frontend UI
-│
-├── uploads/                # Uploaded documents
-├── data/                   # SQLite database and app data
-└── chroma_db/              # ChromaDB vector database storage
-```
+You're now ready to interact with ChatAgent locally.
 
 ---
 
-## Docker Deployment
+# 🐳 Docker Deployment
 
-### 1. Build the Docker image
+Build the Docker image:
 
 ```bash
 docker build -t chatagent .
 ```
 
-### 2. Run the Docker container
+Run the container:
 
 ```bash
 docker run -d \
@@ -156,126 +385,55 @@ docker run -d \
   chatagent
 ```
 
-The app will be available at:
+The application will be available at:
 
-```text
+```
 http://localhost:8080
 ```
 
 ---
 
-## AWS CI/CD Deployment with GitHub Actions
+# ☁️ AWS Deployment
 
-This project can be deployed to AWS using:
+The project is deployed on **AWS EC2** using a fully automated **CI/CD pipeline**.
 
-* GitHub Actions
-* Amazon ECR
-* Amazon EC2
-* Docker
-* GitHub self-hosted runner
+Every push to the **main** branch automatically:
+
+1. Builds a Docker image
+2. Pushes the image to Amazon ECR
+3. Pulls the latest image on AWS EC2
+4. Stops the old container
+5. Starts the updated container
 
 ---
 
-### 1. Create an IAM User
-
-Create an IAM user for deployment and attach the following policies:
+## Deployment Workflow
 
 ```text
-AmazonEC2ContainerRegistryFullAccess
-AmazonEC2FullAccess
-```
-
-You can also use a more restricted custom IAM policy for production.
-
----
-
-### 2. Create an ECR Repository
-
-Create an Amazon ECR repository.
-
-For GitHub Secrets, only save the repository name:
-
-```text
-ECR_REPO=chatagent
-```
-
-Do not save the full ECR URI as `ECR_REPO`.
-
----
-
-### 3. Create an EC2 Instance
-
-Create an Ubuntu EC2 instance.
-
-Recommended inbound security group rule:
-
-```text
-Type: Custom TCP
-Port: 8080
-Source: 0.0.0.0/0
+Developer
+    │
+    ▼
+GitHub Repository
+    │
+    ▼
+GitHub Actions
+    │
+    ▼
+Docker Build
+    │
+    ▼
+Amazon ECR
+    │
+    ▼
+AWS EC2
+    │
+    ▼
+Live ChatAgent
 ```
 
 ---
 
-### 4. Install Docker on EC2
-
-Connect to your EC2 instance and run:
-
-```bash
-sudo apt-get update -y
-sudo apt-get upgrade -y
-```
-
-Install Docker:
-
-```bash
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
-```
-
-Add the Ubuntu user to the Docker group:
-
-```bash
-sudo usermod -aG docker ubuntu
-newgrp docker
-```
-
-Check Docker:
-
-```bash
-docker --version
-```
-
----
-
-### 5. Configure EC2 as a GitHub Self-Hosted Runner
-
-Go to your GitHub repository:
-
-```text
-Settings → Actions → Runners → New self-hosted runner
-```
-
-Select Linux and follow the commands shown by GitHub.
-
-After setup, start the runner:
-
-```bash
-./run.sh
-```
-
-For production, you can configure the runner as a service:
-
-```bash
-sudo ./svc.sh install
-sudo ./svc.sh start
-```
-
----
-
-## GitHub Secrets
-
-Add the following secrets in your GitHub repository:
+## Required GitHub Secrets
 
 ```text
 AWS_ACCESS_KEY_ID
@@ -285,40 +443,86 @@ ECR_REPO
 
 GOOGLE_API_KEY
 GOOGLE_MODEL
+
 TAVILY_API_KEY
+
 LANGSMITH_TRACING
 LANGSMITH_ENDPOINT
 LANGSMITH_API_KEY
 LANGSMITH_PROJECT
 ```
 
-## GitHub Actions Workflow
+---
 
-Create this file:
+# 📈 Future Improvements
 
-```text
-.github/workflows/cicd.yaml
+Planned enhancements include:
+
+- Authentication & User Accounts
+- Multi-Agent Collaboration
+- Image Understanding (Gemini Vision)
+- Speech-to-Speech Conversations
+- SQL Database Agent
+- Calendar & Email Agents
+- Redis Caching
+- PostgreSQL
+- Kubernetes Deployment
+- Additional Tool Integrations
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome!
+
+```bash
+# Fork the repository
+
+git checkout -b feature/your-feature
+
+git commit -m "Add your feature"
+
+git push origin feature/your-feature
 ```
 
-This workflow will:
-
-1. Build your Docker image
-2. Push the image to Amazon ECR
-3. Pull the latest image on EC2
-4. Stop the old container
-5. Run the new container
+Open a Pull Request describing your changes.
 
 ---
 
-## Usage
+# 👨‍💻 Author
 
-After running locally or deploying to AWS:
+## Srinikesh Mucha
 
-1. Open the app in your browser.
-2. Start chatting with the AI assistant.
-3. Upload documents to use them as context.
-4. Ask questions about uploaded files.
-5. Ask current-information questions to trigger web search.
-6. Continue conversations with saved chat history.
+**AI Engineer | Data Engineer | Generative AI | Agentic AI | LLM Applications**
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
 
 ---
+
+# 🙏 Acknowledgements
+
+This project is built using amazing open-source technologies:
+
+- LangGraph
+- LangChain
+- Google Gemini
+- Tavily Search
+- ChromaDB
+- FastAPI
+- SQLAlchemy
+- Docker
+- GitHub Actions
+- Amazon Web Services
+- LangSmith
+
+---
+
+# ⭐ Support
+
+If you enjoyed this project or found it helpful:
+
+- ⭐ Star the repository
+- 🍴 Fork it
+- 🛠️ Build your own AI applications using it
+
+Thank you for visiting!
